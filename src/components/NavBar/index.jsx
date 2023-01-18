@@ -1,54 +1,44 @@
-import React from 'react'
-import { FaShoppingCart } from 'react-icons/fa';
-
+import React from "react";
+import './style.css'
+import { Link } from "react-router-dom";
+import CartWidget from "../CartWidget";
 
 const NavBar = () => {
-  return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-            <a className="navbar-brand" href="/#">HyperSoft</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/#">Inicio</a>
-                </li>
-                <li className="nav-item">
-                <a className="nav-link" href="/#">PC Armado</a>
-                </li>
-                <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="/#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Categoria
-                </a>
-                <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="/#">Motherboard</a></li>
-                    <li><a className="dropdown-item" href="/#">Procesadores</a></li>
-                    <li><a className="dropdown-item" href="/#">RAM</a></li>
-                    <li><a className="dropdown-item" href="/#">Almacenamiento</a></li>
-                    <li><a className="dropdown-item" href="/#">Tarjeta Grafica</a></li>
-                    <li><a className="dropdown-item" href="/#">Fuentes de Alimentacion</a></li>
-                    <li><hr className="dropdown-divider"/></li>
-                    <li><a className="dropdown-item" href="/#">Perifericos</a></li>
-                </ul>
-                </li>
-            </ul>
-            <form className="d-flex" role="search">
-                <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"/>
-                <button className="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
-            <div>
-            <FaShoppingCart size="3rem"/>
-            <span>2</span>
-                
-            </div>
+    return (
+        <ul className="nav-list navbar navbar-expand-lg bg-body-tertiary">
+            
+            <li className="nav-item">
+                <Link to="/">TecnoShop</Link>
+            </li>
+            
+            <li className="nav-item">
+                <Link to="/category/motherboard">Motherboard</Link>
+            </li>
+            <li className="nav-item">
+                <Link to="/category/procesador">Procesador</Link>
+            </li>
+            <li className="nav-item">
+                <Link to="/category/ram">RAM</Link>
+            </li>
+            <li className="nav-item">
+                <Link to="/category/tarjeta grafica">Tarjeta Grafica</Link>
+            </li>
+            <li className="nav-item">
+                <Link to="/category/fuente">Fuentes de Alimentacion</Link>
+            </li>
+            <li className="nav-item">
+                <Link to="/category/perifericos">Perifericos</Link>
+            </li>
+            <li className="nav-item">
+                <Link to="/category/pc">PC Armada</Link>
+            </li>
 
-
+            
+            <div className="widget-container">
+                <CartWidget/>
             </div>
-        </div>
-    </nav>
-  )
+        </ul>
+    )
 }
 
 export default NavBar
